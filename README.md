@@ -1,14 +1,17 @@
-'''(title)Preload.js
+Preload.js
+========
 
-'''(sub)File Preloader API
-'''(paragraph)The idea behind the Preload API was to create a simple, easy to use library for preloading files. Multiple event listeners are available and it removes the cumbersome uses of XMLHttpRequest, Blob, and FileReader to make your code easily understandable.
-'''(paragraph)Note: see [FileHandler.js](./FileHandler.md) for more file handlers and functions including the Preload API.
+#### File Preloader API ####
+The idea behind the Preload API was to create a simple, easy to use library for preloading files. Multiple event listeners are available and it removes the cumbersome uses of `XMLHttpRequest`, `Blob`, and `FileReader` to make your code easily understandable.
 
-'''(sub)Usage
-'''(paragraph)Download [Preload.js](./Preload.js) and include it in your html.
-'''(code:html)<script src='js/Preload.js'></script>
-'''(paragraph)This code creates a Preload object, loads an audio file through it, and displays it's progress in a loading bar. Once finished it plays the audio file.
-'''(code:html)<style>
+### Usage ###
+Download [Preload.js](./Preload.js) and include it in your html.
+```html
+<script src='js/Preload.js'></script>
+```
+This code creates a Preload object, loads an audio file through it, and displays it's progress in a loading bar. Once finished it plays the audio file.
+```html
+<style>
 	body{
 		margin:0px;
 		padding:0px;
@@ -39,27 +42,36 @@
 	loader.read();
 
 </script>
+```
+### Constructor ###
+Returns a new Preload object.
+```Javascript
+new Preload()
+```
 
-'''(sub)Constructor
-'''(paragraph)Returns a new Preload object.
-'''(code:javascript)new Preload()
+### Methods ###
+The `open` command directs the Preload object to it's target url, which cannot be cross-origin unless the external server allows it in its Access-Control-Allow-Origin settings. Note that you may add the extra parameter "text" to receive the file as raw text, otherwise the response will be a dataURL.
 
-'''(sub)Methods
-'''(paragraph)The {func~open} command directs the Preload object to it's target url, which cannot be cross-origin unless the external server allows it in its Access-Control-Allow-Origin settings. Note that you may add the extra parameter "text" to receive the file as raw text, otherwise the response will be a dataURL.
-'''(paragraph)The Preload object has four events called during the load: {func~onload} {func~onprogress} {func~onabort} {func~onreadystatechange}. Note that all four functions have events passed into them containing response data, preload data, and the Preload object. You may also use the {func~addEventListener} function to set these events.
-'''(paragraph)The {func~read} command starts loading the url provided in the open command.
-'''(paragraph)The {func~sample} command grabs all header information for the url provided in the open command.
-'''(paragraph)The {func~abort} command aborts all current progresses within the Preload object.
+The Preload object has four events called during the load: `onload` `onprogress` `onabor` `onreadystatechange`. Note that all four functions have events passed into them containing response data, preload data, and the Preload object. You may also use the `addEventListener` function to set these events.
 
-'''(sub)Change Log
-'''(paragraph)11/22/2012
-'''(bullet)Fixed mobile construction error
-'''(paragraph)11/16/2012
-'''(bullet)Added {func~onerror} event listener
-'''(bullet)Correctly escaped the {func~addEventListener} function
-'''(bullet)The response type can now be changed to raw text
-'''(paragraph)11/04/2012
-'''(bullet)Added {func~onabort} event listener
-'''(bullet)Fixed cross browser support bug for the {func~blobConstructor}
-'''(paragraph)11/02/2012
-'''(bullet)First alpha release
+The `read` command starts loading the url provided in the open command.
+
+The `sample` command grabs all header information for the url provided in the open command.
+
+The `abort` command aborts all current progresses within the Preload object.
+
+### Change Log ###
+11 22 2012
+* Fixed mobile construction error
+
+11 16 2012
+* Added `onerror` event listener
+* Correctly escaped the `addEventListener` function
+* The response type can now be changed to raw text
+
+11 04 2012
+* Added `onabort` event listener
+* Fixed cross browser support bug for the `blobConstructor`
+
+11 02 2012
+* First alpha release
