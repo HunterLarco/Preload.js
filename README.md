@@ -60,6 +60,10 @@ The `sample` command grabs all header information for the url provided in the op
 
 The `abort` command aborts all current progresses within the Preload object.
 
+### Major Browser Compatibility ###
+
+The Preload API is compatible with Chrome and Firefox, yet fails in Safari and Opera due to the lack of sufficient `FileReader` support. Internet Explorer remains untested.
+
 ### Change Log ###
 2012 11 22
 * Fixed mobile construction error
