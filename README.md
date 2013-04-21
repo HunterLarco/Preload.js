@@ -61,17 +61,17 @@ The `sample` command grabs all header information for the url provided in the op
 The `abort` command aborts all current progresses within the Preload object.
 
 ### Change Log ###
-11 22 2012
+2012 11 22
 * Fixed mobile construction error
 
-11 16 2012
+2012 11 16
 * Added `onerror` event listener
 * Correctly escaped the `addEventListener` function
 * The response type can now be changed to raw text
 
-11 04 2012
+2012 11 04
 * Added `onabort` event listener
 * Fixed cross browser support bug for the `blobConstructor`
 
-11 02 2012
+2012 11 02
 * First alpha release
